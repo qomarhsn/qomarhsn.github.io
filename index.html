@@ -1,152 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamrul Hasan</title>
-    <link href="https://fonts.cdnfonts.com/css/blogger-sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="me" href="https://social.trom.tf/profile/kamrulhasanio">
+    <title>Qomarul Hasan</title>
+    <meta name="description" content="Muslim | Ahlus Sunnah wal Jamayah | Hanafi | Linux & Tech Enthusiast">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
+    
     <style>
-        body {
-            font-family: 'Blogger Sans', sans-serif;
+        :root {
+            --primary-color: #6366F1;
+            --background-dark: #111827;
+            --background-light: #F9FAFB;
+            --card-bg-dark: rgba(30, 41, 59, 0.8);
+            --card-bg-light: rgba(255, 255, 255, 0.8);
+            --footer-bg-dark: rgba(30, 41, 59, 0.6);
+            --footer-bg-light: rgba(255, 255, 255, 0.6);
+            --text-dark: #F9FAFB;
+            --text-light: #111827;
+            --border-dark: rgba(255, 255, 255, 0.1);
+            --border-light: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text color */
-            display: flex; /* Enable Flexbox */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Full viewport height */
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
+        
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center everything vertically */
+            align-items: center; /* Center everything horizontally */
+            background-color: var(--background-dark);
+            color: var(--text-dark);
+        }
+        
         .container {
-            width: 90%;
-            max-width: 600px; /* Set a maximum width for the container */
-            padding: 20px;
-            background-color: #1e1e1e; /* Darker container */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .hero-area img {
-            display: block;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 4px solid #007bff; /* Blue border */
-        }
-        h1, h2, h3 {
-            text-align: center;
-            margin: 10px 0;
-            font-weight: normal;
-        }
-        h1 {
-            font-size: 30px;
-        }
-        h2 {
-            font-size: 25px;
-        }
-        h3 {
-            font-size: 22px;
-        }
-        p, a {
-            text-align: center;
-            margin: 10px 0;
-            font-size: 19px;
-        }
-        a {
-            color: #007bff; /* Blue link color */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-        .social-icons a {
-            font-size: 25px;
-            color: #e0e0e0; /* Light color for social icons */
-        }
-        .social-icons a:hover {
-            color: #007bff; /* Change color on hover */
-        }
-        .portfolio {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .portfolio .portfolio-title {
             width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
-        .portfolio .portfolio-items {
+        
+        .profile-card {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+            position: relative;
+            background-color: var(--card-bg-dark);
+            border: 1px solid var(--border-dark);
+        }
+        
+        .profile-image {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary-color);
+            transition: transform 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .profile-bio {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            max-width: 100%;
+            animation: fadeIn 0.5s ease-out 0.1s both;
+        }
+        
+        .links-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 0.75rem;
             justify-content: center;
+            width: 100%;
         }
-        .portfolio-item {
-            flex: 1 1 calc(33.33% - 20px);
-            margin: 5px;
-            border: 2px solid #007bff; /* Blue border for items */
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            background-color: #2a2a2a; /* Dark background for items */
-        }
-        .portfolio-item h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: #e0e0e0; /* Light text for item titles */
-        }
-        .portfolio-item a {
-            display: block;
-            margin-top: 10px;
-            color: #007bff; /* Blue link color */
+        
+        .link-item {
+            display: flex;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.2s;
             text-decoration: none;
+            color: inherit;
+            animation: fadeIn 0.5s ease-out;
+            animation-fill-mode: both;
+            border: 1px solid var(--border-dark);
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: auto;
+            max-width: 100%;
         }
-        .portfolio-item a:hover {
-            text-decoration: underline; /* Underline on hover */
+        
+        .link-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .link-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            min-width: 40px;
+            height: 40px;
+        }
+        
+        .link-title {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(30, 41, 59, 0.9);
+        }
+        
+        .photo-credit {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        .page-footer {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            opacity: 0.8;
+            backdrop-filter: blur(8px);
+            margin-top: 1.5rem;
+            background-color: var(--footer-bg-dark);
+            border: 1px solid var(--border-dark);
+        }
+        
+        .footer {
+            width: 100%;
+        }
+        
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Apply animation delay to links */
+        .link-item:nth-child(1) { animation-delay: 0.2s; }
+.link-item:nth-child(2) { animation-delay: 0.30000000000000004s; }
+.link-item:nth-child(3) { animation-delay: 0.4s; }
+.link-item:nth-child(4) { animation-delay: 0.5s; }
+.link-item:nth-child(5) { animation-delay: 0.6000000000000001s; }
+        
+        /* RTL support for directional elements */
+        [dir="rtl"] .link-icon {
+            order: 2;
+        }
+        
+        [dir="rtl"] .link-title {
+            order: 1;
+        }
+        
+        .first-letter {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem 0.5rem;
+            }
+            
+            .profile-card {
+                padding: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hero-area">
-            <img src="kh.png" alt="Profile Picture" class="profile-pic">
-            <h1>Kamrul Hasan</h1>
-            <p>Muslim | Ahlus Sunnah wal Jamayah | Hanafi | Linux & Tech Enthusiast</p>
-            <p class="social-icons">
-                <a href="https://t.me/kamrulhasanofficial" class="fab fa-telegram"></a>
-                <a href="https://fb.com/kamrulhasanio" class="fab fa-facebook"></a>
-                <a href="https://m.me/kamrulhasanio" class="fab fa-facebook-messenger"></a>
-                <a href="https://github.com/kamrulhasanio" class="fab fa-github"></a>
-            </p>
-        </div>
-        <div class="portfolio">
-            <div class="portfolio-title">
-                <h2>Hobby Project</h2>
+        <div class="profile-card">
+            <div class="profile-image">
+                    <img 
+                        src="https://qomarhsn.github.io/profile.jpg" 
+                        alt="Qomarul Hasan" 
+                        onerror="this.src='https://via.placeholder.com/150?text=Profile'"
+                    />
+                </div>
+            <h1 class="profile-name">Qomarul Hasan</h1>
+            <p class="profile-bio">Muslim | Ahlus Sunnah wal Jamayah | Hanafi | Linux & Tech Enthusiast</p>
+
+            <div class="links-container">
+                
+                    <a 
+                        href="https://fb.com/qomarhsn" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="link-item"
+                    >
+                        <div class="link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </div>
+                        <div class="link-title">
+                            <span>Facebook</span>
+                        </div>
+                    </a>
+                    <a 
+                        href="https://github.com/qomarhsn" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="link-item"
+                    >
+                        <div class="link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </div>
+                        <div class="link-title">
+                            <span>GitHub</span>
+                        </div>
+                    </a>
+                    <a 
+                        href="https://qomarhsn.github.io" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="link-item"
+                    >
+                        <div class="link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <div class="link-title">
+                            <span>Website</span>
+                        </div>
+                    </a>
+                    <a 
+                        href="https://x.com/qomarhsn" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="link-item"
+                    >
+                        <div class="link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                        </div>
+                        <div class="link-title">
+                            <span>Twitter</span>
+                        </div>
+                    </a>
+                    <a 
+                        href="https://t.me/qomarhsn" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="link-item"
+                    >
+                        <div class="link-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="link-title">
+                            <span>Telegram</span>
+                        </div>
+                    </a>
             </div>
-            <div class="portfolio-items">
-                <div class="portfolio-item">
-                    <h3><i class="fab fa-android"></i> OSAAC</h3>
-                    <p>Open Source Android App Collections.</p>
-                    <a href="https://kamrulhasanio.github.io/osaac">View</a>
-                </div>
-                <div class="portfolio-item">
-                    <h3><i class="fas fa-tasks"></i> To-Do</h3>
-                    <p>Only a Basic and Simple To-Do App.</p>
-                    <a href="https://kamrulhasanio.github.io/todo">View</a>
-                </div>
-                <div class="portfolio-item">
-                    <h3><i class="fas fa-exchange"></i> Bijoy Converter</h3>
-                    <p> Simple Unicode to Bijoy Classic and Bijoy Classic to Unicode converter</p>
-                    <a href="https://unicode-bijoyclassic.pages.dev/">View</a>
-                </div>
-                <div class="portfolio-item">
-                    <h3><i class="fas fa-mobile-alt"></i> 000000</h3>
-                    <p>Nothing to say</p>
-                    <a href="#">View</a>
-                </div>
-            </div>
+
         </div>
+        
+        
+        <div class="page-footer footer">
+            Created with <a href="https://linkcraft.qomarhsn.com" target="_blank" rel="noopener noreferrer">LinkCraft</a>
+        </div>
+        
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
