@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Baloo Da 2';
-    src: url('/balooda2.woff2') format('woff2');
+    src: url('/assets/balooda2.woff2') format('woff2');
     font-weight: 100 700;
     font-display: swap;
 }
