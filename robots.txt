@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://qomarhsn.com/sitemap.xml
+Sitemap: https://blog.qomarhsn.com/sitemap.xml
+Sitemap: https://bijoy2unicode.qomarhsn.com/sitemap.xml
