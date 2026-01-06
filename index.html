@@ -1,25 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Not reachable</title>
-        <style>
-            html,
-            body {
-                height: 100%;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-family: Arial, sans-serif;
-                font-size: 2em;
-                color: #333;
-                background-color: #f4f4f4;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qomarul Hasan | Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f8f9fa;
+            --text: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --surface: #1a1a1a;
+                --text: #f5f5f5;
+                --text-secondary: #a3a3a3;
+                --accent: #3b82f6;
+                --border: #262626;
             }
-        </style>
-    </head>
-    <body>
-        <div>Not available</div>
-    </body>
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Updated font family */
+            font-family: 'Noto Serif', serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .arabic-greeting {
+            font-size: 1.75rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: 1.4;
+        }
+
+        .content-box {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .name {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .description {
+            font-size: 1.125rem;
+            color: var(--text);
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .description p {
+            margin-bottom: 1.25rem;
+        }
+
+        .description strong {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .skills-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .skill-item {
+            background-color: var(--bg);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            color: var(--text);
+            border: 1px solid var(--border);
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .social-icon {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 0;
+            }
+            
+            .content-box {
+                padding: 2rem 1.5rem;
+            }
+            
+            .name {
+                font-size: 1.75rem;
+            }
+            
+            .arabic-greeting {
+                font-size: 1.5rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-link {
+                flex: 1;
+                min-width: 140px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="arabic-greeting" dir="rtl" lang="ar">السلام عليكم ورحمة الله وبركاته</div>
+        
+        <div class="content-box">
+            <h1 class="name">Qomarul Hasan</h1>
+            
+            <div class="description">
+                <p>I'm a full-time learner and part-time Linux, FOSS, and tech enthusiast. Currently, I'm learning web development, focusing on React and Next.js to build interactive web apps.</p>
+                <p>In my free time, I enjoy exploring open-source projects, contributing when possible, experimenting with new tools, building small projects, and sharing insights on my blog.</p>
+            </div>
+            
+            <div class="skills-title">Technologies</div>
+            <div class="skills-list">
+                <span class="skill-item">C</span>
+                <span class="skill-item">C++</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">HTML</span>
+                <span class="skill-item">CSS</span>
+                <span class="skill-item">Tailwind CSS</span>
+                <span class="skill-item">Linux Fedora</span>
+                <span class="skill-item">VSCodium</span>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://t.me/qomarhsn" target="_blank" class="social-link">
+                <i class="fab fa-telegram social-icon"></i>
+                <span>Telegram</span>
+            </a>
+            <a href="https://facebook.com/qomarhsn" target="_blank" class="social-link">
+                <i class="fab fa-facebook social-icon"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://x.com/qomarhsn" target="_blank" class="social-link">
+                <i class="fab fa-twitter social-icon"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="mailto:mail@qomarhsn.com" target="_blank" class="social-link">
+                <i class="fas fa-envelope social-icon"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://blog.qomarhsn.com" target="_blank" class="social-link">
+                <i class="fas fa-blog social-icon"></i>
+                <span>Blog</span>
+            </a>
+        </div>
+    </div>
+</body>
 </html>
